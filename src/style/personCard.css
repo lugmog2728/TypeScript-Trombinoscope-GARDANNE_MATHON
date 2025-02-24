@@ -1,0 +1,52 @@
+.person-card {
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 10px;
+}
+
+.person-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.person-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 10px;
+}
+
+.person-card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.person-card p:last-child {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .person-card {
+        width: 200px;
+        padding: 10px;
+    }
+
+    .person-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .person-card p {
+        font-size: 14px;
+    }
+}

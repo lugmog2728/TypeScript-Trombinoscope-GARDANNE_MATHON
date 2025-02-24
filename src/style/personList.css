@@ -1,0 +1,17 @@
+.person-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .person-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}

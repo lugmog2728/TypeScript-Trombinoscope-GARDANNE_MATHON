@@ -1,4 +1,4 @@
-.person-list {
+.list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -10,7 +10,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .person-list {
+    .list {
         flex-direction: column;
         align-items: center;
     }

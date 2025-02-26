@@ -1,17 +1,18 @@
 // src/App.tsx
-import React, { useState } from 'react';
 import PersonList from './components/PersonList';
 import { Person } from './types/Person';
 import data from './data.json';
+import {Trombi} from "./types/Trombi";
+import React from "react";
 
+interface TrombiProps{
+    trombi: Trombi
+}
 
-const App: React.FC = () => {
-
-  const personList: Person[] = data.map(person => ({
-    ...person,
-    category: person.category as 'Professeur' | 'Stagiaire' | 'Etudiant'
+const App: React.FC<TrombiProps> = ({ trombi }) => {
+     const personList: Person[] = trombi.peoples.map(person => ({
+    ...person
   }));
-
 
   return (
       <div className="App">

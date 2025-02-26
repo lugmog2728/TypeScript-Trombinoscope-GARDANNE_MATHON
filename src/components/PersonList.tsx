@@ -1,11 +1,11 @@
 import React from 'react';
 import { Person } from '../types/Person';
 import PersonCard from "./PersonCard";
-import '../style/personList.css';
+import '../style/list.css';
 
 const PersonList: React.FC<{ persons: Person[] }> = ({ persons }) => {
     return (
-        <div className="person-list">
+        <div className="list">
             {persons.map(person => (
                 <PersonCard key={person.id} person={person} />
             ))}

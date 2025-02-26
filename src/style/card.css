@@ -1,4 +1,4 @@
-.person-card {
+.card {
     width: 10%;
     padding: 10px;
     border-radius: 10px;
@@ -9,12 +9,12 @@
     margin: 5px;
 }
 
-.person-card:hover {
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.person-card img {
+.card img {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -23,30 +23,30 @@
     margin-bottom: 10px;
 }
 
-.person-card p {
+.card p {
     margin: 5px 0;
     font-size: 16px;
     color: #333;
 }
 
-.person-card p:last-child {
+.card p:last-child {
     font-weight: bold;
     color: #007bff;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .person-card {
+    .card {
         width: 200px;
         padding: 10px;
     }
 
-    .person-card img {
+    .card img {
         width: 80px;
         height: 80px;
     }
 
-    .person-card p {
+    .card p {
         font-size: 14px;
     }
 }

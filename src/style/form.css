@@ -1,0 +1,74 @@
+    /* Style global pour les form-group */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-size: 16px;
+        color: #333;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box; /* Ajouté pour garantir la cohérence */
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        outline: none;
+    }
+
+    .form-group input::placeholder {
+        color: #aaa;
+    }
+
+    /* Style des boutons */
+    button {
+        padding: 12px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button[type="submit"] {
+        background-color: #28a745;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    button[type="submit"]:hover {
+        background-color: #218838;
+    }
+
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    }
+
+    /* Ajout d'un espacement entre les actions */
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 20px;
+    }

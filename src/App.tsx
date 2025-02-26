@@ -4,6 +4,7 @@ import { Person } from './types/Person';
 import data from './data.json';
 import {Trombi} from "./types/Trombi";
 import React from "react";
+import Modal from './components/Modal';
 
 interface TrombiProps{
     trombi: Trombi
@@ -18,6 +19,7 @@ const App: React.FC<TrombiProps> = ({ trombi }) => {
       <div className="App">
         <h1>Trombinoscope</h1>
         <PersonList persons={personList} />
+        <Modal />
       </div>
   );
 };

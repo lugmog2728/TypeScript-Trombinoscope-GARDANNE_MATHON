@@ -4,7 +4,7 @@ import AddPerson from './AddPerson';
 import '../style/modal.css'
 
 export default function PortalExample() {
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <>

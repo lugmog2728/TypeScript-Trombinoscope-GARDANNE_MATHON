@@ -1,4 +1,4 @@
-// src/App.tsx
+// src/TrombiPage.tsx
 import PersonList from './components/PersonList';
 import { Person } from './types/Person';
 import data from './data.json';
@@ -10,7 +10,7 @@ interface TrombiProps{
     trombi: Trombi
 }
 
-const App: React.FC<TrombiProps> = ({ trombi }) => {
+const TrombiPage: React.FC<TrombiProps> = ({ trombi }) => {
      const personList: Person[] = trombi.peoples.map(person => ({
     ...person
   }));
@@ -24,4 +24,4 @@ const App: React.FC<TrombiProps> = ({ trombi }) => {
   );
 };
 
-export default App;
+export default TrombiPage;

@@ -4,7 +4,8 @@ import {Trombi} from "../types/Trombi";
 import '../style/card.css';
 
 interface TrombiCardProps {
-    trombi: Trombi
+    trombi: Trombi,
+    key?: number
 }
 
 const TrombiCard: React.FC<TrombiCardProps> = (props) => {

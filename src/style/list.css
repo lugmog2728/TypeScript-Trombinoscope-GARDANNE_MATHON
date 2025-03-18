@@ -8,7 +8,7 @@
     margin: 0 auto;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .list {
         flex-direction: column;

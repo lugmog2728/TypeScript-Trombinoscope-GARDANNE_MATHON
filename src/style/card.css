@@ -1,5 +1,4 @@
 .card {
-    width: 10%;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -21,7 +20,14 @@
     border-radius: 50%;
     border: 3px solid #007bff;
     margin-bottom: 10px;
+    display: inline-block;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 100px;
+    font-size: 12px;
+    color: black;
 }
+
 
 .card p {
     margin: 5px 0;

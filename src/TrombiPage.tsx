@@ -4,6 +4,8 @@ import { Person } from "./types/Person";
 import { Trombi } from "./types/Trombi";
 import Modal from "./components/Modal";
 import AddPerson from "./components/AddPerson";
+import "./App.css";
+
 
 interface TrombiProps {
     trombi: Trombi;
@@ -24,14 +26,15 @@ const TrombiPage: React.FC<TrombiProps> = ({ trombi }) => {
     };
 
     return (
-        <div className="App">
-            <h1>Trombinoscope</h1>
+        <div>
+            <div className="header">
+                <h1>Trombinoscope</h1>
+                <button onClick={() => setShowModal(true)}>
+                    Ajouter une personne
+                </button>
+            </div>
 
             <PersonList persons={personList} removePerson={removePerson} />
-
-            <button onClick={() => setShowModal(true)} className="bg-blue-500 text-white px-4 py-2 rounded">
-                Ajouter une personne
-            </button>
 
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

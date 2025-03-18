@@ -4,6 +4,7 @@ import React from 'react';
 import data from './data.json';
 import {Trombi} from "./types/Trombi";
 import TrombiList from "./components/TrombiList";
+import './App.css';
 
 
 const Home: React.FC = () => {
@@ -19,8 +20,9 @@ const Home: React.FC = () => {
 
     return (
         <div className="App">
-            <h1>
-                Trombinoscope</h1>
+            <div className="header">
+                <h1>Trombinoscope</h1>
+            </div>
             <TrombiList trombis={personList} />
         </div>
     );

@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import '../style/form.css';
-import {Person} from "../types/Person";
+import { Person } from "../types/Person";
 
-interface ModalContentProps {
+interface AddPersonProps {
+    addPerson: (person: Person) => void;
     onClose: () => void;
 }
 
-export default function ModalContent({ onClose }: ModalContentProps) {
+export default function AddPerson({ addPerson, onClose }: AddPersonProps) {
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
     const [category, setCategory] = useState('');
@@ -14,15 +15,21 @@ export default function ModalContent({ onClose }: ModalContentProps) {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        if (!name.trim() || !category) {
+            alert("Veuillez remplir les champs obligatoires.");
+            return;
+        }
+
         const newPerson: Person = {
-            id: 1,
-            name:  name,
+            id: Date.now(),
+            name,
             photo: photo || "https://via.placeholder.com/150",
             category: category as 'Professeur' | 'Stagiaire' | 'Etudiant',
         };
-        console.log(newPerson);
-        onClose();
-    }
+
+        addPerson(newPerson); // Ajoute la personne à la liste
+        onClose(); // Ferme le modal après l'ajout
+    };
 
     return (
         <div className="modal">
@@ -31,17 +38,17 @@ export default function ModalContent({ onClose }: ModalContentProps) {
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Nom</label>
-                        <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Entrez le nom"/>
+                        <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Entrez le nom" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="photo">URL de la photo</label>
-                        <input id="photo" type="text" value={photo} onChange={(e) => setPhoto(e.target.value)} placeholder="Entrez l'URL de la photo"/>
+                        <input id="photo" type="text" value={photo} onChange={(e) => setPhoto(e.target.value)} placeholder="Entrez l'URL de la photo" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="category">Catégorie</label>
-                        <select id="category" value={category} onChange={(e) => setCategory(e.target.value)} >
+                        <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
                             <option value="">Sélectionnez une catégorie</option>
                             <option value="Professeur">Professeur</option>
                             <option value="Stagiaire">Stagiaire</option>

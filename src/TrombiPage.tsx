@@ -4,8 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import PersonList from "./components/PersonList";
 import { Person } from "./types/Person";
 import { Trombi } from "./types/Trombi";
-import Modal from "./components/Modal";
-import AddPerson from "./components/AddPerson";
+import Modal from "./utils/Modal";
+import AddPerson from "./components/form/AddPerson";
 import { DndContext, DragEndEvent, MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import "./App.css";
 

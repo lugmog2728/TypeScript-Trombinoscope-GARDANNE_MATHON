@@ -4,10 +4,10 @@ import React, {useState} from 'react';
 import data from './data.json';
 import {Trombi} from "./types/Trombi";
 import TrombiList from "./components/TrombiList";
-import Modal from "./components/Modal";
+import Modal from "./utils/Modal";
 import './App.css';
-import AddPerson from "./components/AddPerson";
-import AddTrombi from "./components/AddTrombi";
+import AddPerson from "./components/form/AddPerson";
+import AddTrombi from "./components/form/AddTrombi";
 import {Person} from "./types/Person";
 
 

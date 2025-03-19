@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import '../style/form.css';
-import { Trombi } from "../types/Trombi";
-import DropZone from "./DropZone";
+import '../../style/form.css';
+import { Trombi } from "../../types/Trombi";
+import DropZone from "../../utils/DropZone";
 
 interface AddTrombiProps {
     addTrombi: (trombi: Trombi) => void;

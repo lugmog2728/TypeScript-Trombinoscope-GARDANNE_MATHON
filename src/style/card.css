@@ -56,3 +56,15 @@
     display: block;
     background: none;
 }
+
+.etudiant img {
+    border-color: #007bff;
+}
+
+.professeur img {
+    border-color: #1aff00;
+}
+
+.stagiaire img {
+    border-color: #fff200;
+}

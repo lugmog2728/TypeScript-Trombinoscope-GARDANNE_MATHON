@@ -22,7 +22,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ person, removePerson }) => {
     return (
         <div ref={setNodeRef}
              style={{ transform: CSS.Transform.toString(transform), transition }}
-             className="card"
+             className={`card ${person.category.toLowerCase()}`}
              {...listeners}
              {...attributes}
         >

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Person } from '../types/Person';
 import '../style/card.css';
+import { Trash2 } from 'lucide-react';
 
 interface PersonCardProps {
     person: Person;
@@ -13,7 +14,9 @@ const PersonCard: React.FC<PersonCardProps> = ({ person, removePerson }) => {
             <img src={person.photo} alt={person.name} />
             <p>{person.name}</p>
             <p>{person.category}</p>
-            <button onClick={() => removePerson(person.id)}> Supprimer </button>
+            <button className="delete" onClick={() => removePerson(person.id)}>
+                <Trash2 size={20} color={"red"} />
+            </button>
         </div>
     );
 };

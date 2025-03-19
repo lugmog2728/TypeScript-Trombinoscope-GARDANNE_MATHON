@@ -8,7 +8,7 @@ interface TrombiListProps {
     trombis: Trombi[]; // an array of Trombi
 }
 
-const TrombiList: React.FC<TrombiListProps> = ({ trombis}) => {
+const TrombiList: React.FC<TrombiListProps> = ({ trombis }) => {
     return (
         <div className="list">
             {trombis.map((trombi) => (

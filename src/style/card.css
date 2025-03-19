@@ -41,19 +41,18 @@
     color: #007bff;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .card {
-        width: 200px;
-        padding: 10px;
-    }
+.delete {
+    position: absolute;
+    background: none;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+    border: none;
+    display: none;
+    padding: 0;
+}
 
-    .card img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .card p {
-        font-size: 14px;
-    }
+.card:hover .delete {
+    display: block;
+    background: none;
 }

@@ -1,20 +1,23 @@
-// TrombiCard.tsx
 import React from 'react';
-import {Trombi} from "../types/Trombi";
+import { useNavigate } from 'react-router-dom';
+import { Trombi } from "../types/Trombi";
 import '../style/card.css';
 
 interface TrombiCardProps {
-    trombi: Trombi,
-    key?: number
+    trombi: Trombi;
 }
 
-const TrombiCard: React.FC<TrombiCardProps> = (props) => {
+const TrombiCard: React.FC<TrombiCardProps> = ({ trombi }) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/trombi/${trombi.id}`); // Redirection vers "/trombi/id"
+    };
+
     return (
-        <div
-            className="card"
-        >
-            <img src={props.trombi.photo} alt={props.trombi.name}/>
-            <p>{props.trombi.name}</p>
+        <div className="card" onClick={handleClick} style={{ cursor: "pointer" }}>
+            <img src={trombi.photo} alt={trombi.name} />
+            <p>{trombi.name}</p>
         </div>
     );
 };

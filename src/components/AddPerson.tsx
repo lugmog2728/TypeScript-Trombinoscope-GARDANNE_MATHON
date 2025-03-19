@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../style/form.css';
 import { Person } from "../types/Person";
+import DropZone from '../components/DropZone';
 
 interface AddPersonProps {
     addPerson: (person: Person) => void;
@@ -11,6 +12,10 @@ export default function AddPerson({ addPerson, onClose }: AddPersonProps) {
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
     const [category, setCategory] = useState('');
+
+    const handleFileSelect = (file: string) => {
+        setPhoto(file); // Met à jour l'état photo avec l'URL de l'image
+    };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -43,7 +48,7 @@ export default function AddPerson({ addPerson, onClose }: AddPersonProps) {
 
                     <div className="form-group">
                         <label htmlFor="photo">URL de la photo</label>
-                        <input id="photo" type="text" value={photo} onChange={(e) => setPhoto(e.target.value)} placeholder="Entrez l'URL de la photo" />
+                        <DropZone onFileSelect={handleFileSelect} />
                     </div>
 
                     <div className="form-group">

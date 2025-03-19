@@ -38,7 +38,7 @@ const Home: React.FC = () => {
                 <button onClick={() => setShowModal(true)}>Ajouter un trombi</button>
 
             </div>
-            <TrombiList trombis={personList} />
+            <TrombiList trombis={personList} removeTrombi={removeTrombi} />
 
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

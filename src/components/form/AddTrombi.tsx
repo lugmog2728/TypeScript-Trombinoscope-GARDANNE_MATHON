@@ -20,7 +20,7 @@ export default function AddTrombi({addTrombi, onClose }: AddTrombiProps) {
         e.preventDefault();
 
         if (!name.trim()) {
-            alert('Veuillez rempir les champs obligatoires.');
+            alert('Veuillez remplir les champs obligatoires.');
             return;
         }
 

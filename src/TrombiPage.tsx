@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import PersonList from "./components/PersonList";
+import PdfGenerator from "./utils/PdfGenerator";
 import { Person } from "./types/Person";
 import { Trombi } from "./types/Trombi";
 import Modal from "./utils/Modal";
@@ -53,6 +54,7 @@ const TrombiPage: React.FC<TrombiProps> = ({ trombi }) => {
             <div className="header">
                 <h1>{trombi.name}</h1>
                 <button onClick={() => setShowModal(true)}>Ajouter une personne</button>
+                <PdfGenerator people={personList} />
                 <button onClick={() => navigate("/")} >
                     <ArrowLeft size={20} />
                 </button>

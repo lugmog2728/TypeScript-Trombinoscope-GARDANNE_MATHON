@@ -15,9 +15,11 @@ const loadImage = (url: string): Promise<HTMLImageElement> => {
 
 interface PdfGeneratorProps {
     people: Person[];
+    trombiName: string;
+    roles: string[];
 }
 
-const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people }) => {
+const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people, trombiName, roles }) => {
     const generatePDF = async () => {
         const doc = new jsPDF({
             orientation: "portrait",
@@ -26,7 +28,7 @@ const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people }) => {
         });
 
         doc.setFontSize(22);
-        doc.text("Trombinoscope", 105, 15, { align: "center" });
+        doc.text(trombiName, 105, 15, { align: "center" });
 
         doc.setFontSize(10);
         doc.text(`Généré le : ${new Date().toLocaleDateString("fr-FR")}`, 105, 22, { align: "center" });
@@ -40,8 +42,11 @@ const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people }) => {
         const cardsPerRow = 4;
         const spacing = (pageWidth - 2 * margin - cardsPerRow * cardWidth) / (cardsPerRow - 1);
 
-        for (let i = 0; i < people.length; i++) {
-            const person = people[i];
+        // Filtrer les personnes en fonction des rôles sélectionnés
+        const filteredPeople = people.filter(person => roles.includes(person.category));
+
+        for (let i = 0; i < filteredPeople.length; i++) {
+            const person = filteredPeople[i];
             const col = i % cardsPerRow;
             const row = Math.floor(i / cardsPerRow);
 
@@ -79,7 +84,7 @@ const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people }) => {
             doc.text(`(${person.category})`, x + 20, y + 33, { align: "center" });
         }
 
-        doc.save(`Trombinoscope.pdf`);
+        doc.save(`Trombinoscope_${trombiName.replace(' ', '_')}.pdf`);
     };
 
     return (

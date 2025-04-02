@@ -4,12 +4,15 @@ import './index.css';
 import App from './TrombiPage';
 import reportWebVitals from './reportWebVitals';
 import {Trombi} from "./types/Trombi";
+import { Person} from "./types/Person"
 import Index from "./Router";
+import {addElement, init} from "./types/Database"
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+init()
 root.render(
   <React.StrictMode>
     <Index />

@@ -4,31 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e19f42e7-3eb1-4dd2-9f43-acca58f4b3c4" name="Changes" comment="Modification des trombi">
-      <change afterPath="$PROJECT_DIR$/src/types/Database.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="✨ it's posible to choose with category export">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Router.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TrombiPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrombiPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/Person.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Person.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/Database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Database.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="JavaScript File" />
-        <option value="Dockerfile" />
-        <option value="TypeScript File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,76 +23,40 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Tokinoi&quot;
+    &quot;assignee&quot;: &quot;lugmog2728&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/lugmog2728/TypeScript-Trombinoscope-GARDANNE_MATHON.git&quot;,
-    &quot;accountId&quot;: &quot;f2299ef5-989d-4d96-8e43-5b13b78a8c46&quot;
+    &quot;url&quot;: &quot;git@github.com:lugmog2728/TypeScript-Trombinoscope-GARDANNE_MATHON.git&quot;,
+    &quot;accountId&quot;: &quot;f53ecb8c-7440-4497-96cf-7b654ce773dc&quot;
   }
 }</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2tUJZ1b0ZFbgsWmgqQG8Mv8s3AY" />
+  <component name="ProjectId" id="2vBfuGZ5HmzZC4Zlo3hdar4GmqI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Docker.compose.yml.run: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/lugmog/projet-dev/TypeScript-Trombinoscope-GARDANNE_MATHON&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\alonz\\Documents\\GitHub\\TypeScript-Trombinoscope-GARDANNE_MATHON\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;\\\\wsl.localhost\\Ubuntu\\home\\lugmog\\projet-dev\\TypeScript-Trombinoscope-GARDANNE_MATHON\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\alonz\Documents\GitHub\TypeScript-Trombinoscope-GARDANNE_MATHON\public" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="compose.yml.run: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="run" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.compose.yml.run: Compose Deployment" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -116,30 +67,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e19f42e7-3eb1-4dd2-9f43-acca58f4b3c4" name="Changes" comment="" />
-      <created>1740400772866</created>
+      <changelist id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="✨ it's posible to choose with category export" />
+      <created>1743623608759</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1740400772866</updated>
-      <workItem from="1740400774325" duration="6445000" />
-      <workItem from="1740411980107" duration="1224000" />
-      <workItem from="1740488410190" duration="2086000" />
-      <workItem from="1740490644072" duration="7896000" />
-      <workItem from="1740574274850" duration="11458000" />
-      <workItem from="1740676436369" duration="249000" />
-      <workItem from="1741024340230" duration="5974000" />
-      <workItem from="1742301509500" duration="36653000" />
-      <workItem from="1742488872169" duration="43000" />
+      <updated>1743623608759</updated>
+      <workItem from="1743623609933" duration="12842000" />
+      <workItem from="1743772311002" duration="2627000" />
     </task>
-    <task id="LOCAL-00001" summary="Modification des trombi">
-      <option name="closed" value="true" />
-      <created>1742302373027</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1742302373027</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,9 +90,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modification des trombi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification des trombi" />
   </component>
 </project>

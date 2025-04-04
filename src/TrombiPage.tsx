@@ -1,23 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import PersonList from "./components/PersonList";
 import ExportPdf from "./components/form/ExportPdf";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Person } from "./types/Person";
 import { Trombi } from "./types/Trombi";
-import Modal from "./utils/Modal";
-import AddPerson from "./components/form/AddPerson";
 import { DndContext, DragEndEvent, MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import "./App.css";
-
 import PersonList from "./components/PersonList";
-import Modal from "./components/Modal";
-import AddPerson from "./components/AddPerson";
+import Modal from "./utils/Modal";
+import AddPerson from "./components/form/AddPerson";
 import {addElement, getElement, getMaxId, removeElement} from "./types/Database";
-import {getNextKeyDef} from "@testing-library/user-event/dist/keyboard/getNextKeyDef";
-import personCard from "./components/PersonCard";
 
 interface TrombiProps {
     trombi: Trombi;
@@ -33,33 +25,24 @@ const TrombiPage: React.FC<TrombiProps> = ({ trombi }) => {
         useSensor(MouseSensor),
         useSensor(TouchSensor)
     );
-const TrombiPage: React.FC = () => {
-    const { id } = useParams<{ id: string }>();
-    let [personList, setPersonList] = useState<Person[]>([]);
-    const [showModal, setShowModal] = useState(false);
 
-    // 🔹 Charger les données de trombi à partir d'IndexedDB
     useEffect(() => {
         let elements: Person[] = [];
-        getElement('peoplesStore','all').then((value:any)=>{
-                value.forEach((element: any) => {
-                    console.log(element)
-                    if(element.trombiID == id){
-                        let person = {
-                            id: element.uuid,
-                            name: element.name,
-                            photo: element.photo,
-                            category: element.category,
-                        }
-                        elements.push(person);
-                    }
-                })
-            }
-        )
-        console.table(personList)
-        console.table(elements);
-        personList = elements;
-    });
+        getElement("peoplesStore", "all").then((value: any) => {
+            value.forEach((element: any) => {
+                if (element.trombiID == trombi.id) { // 👈 Utiliser trombi.id directement
+                    elements.push({
+                        id: element.uuid,
+                        name: element.name,
+                        photo: element.photo,
+                        category: element.category,
+                    });
+                }
+            });
+            setPersonList(elements);
+        });
+    }, [trombi.id]);
+
 
 
     const addPerson = (newPerson: Person) => {
@@ -68,8 +51,8 @@ const TrombiPage: React.FC = () => {
         getMaxId('peoplesStore').then((maxId)=>{
             id_person=maxId +1
             addElement('peoplesStore', {
-                uuid: id_person,
-                trombiID: id,
+                id: id_person,
+                trombiID: trombi.id,
                 name: newPerson.name,
                 photo: newPerson.photo,
                 category: newPerson.category,
@@ -83,7 +66,6 @@ const TrombiPage: React.FC = () => {
                     setPersonList(elements);
                 })
         });
-
     };
 
     const removePerson = (id_i: number) => {

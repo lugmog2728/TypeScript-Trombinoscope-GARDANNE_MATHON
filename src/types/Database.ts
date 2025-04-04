@@ -55,7 +55,7 @@ export const getMaxId = (store: string): Promise<number> => {
                 request.onsuccess = () => {
                     let max = 0
                     request.result.forEach((element: any) => {
-                        if (element.uuid > max) max = element.uuid;
+                        if (element.id > max) max = element.id;
                     })
                     resolve(max);
                 };
@@ -82,11 +82,11 @@ export const addElement = (store: string, payload: object): Promise<number> => {
 
                 request.onsuccess = () => {
                     console.log('Ajout réussi avec UUID:', request.result);
-                    return(request.result); // Retourne l'ID généré
+                    resolve(request.result as number); // ✅ Corrigé ici !
                 };
 
                 request.onerror = () => {
-                    console.error(request.error);
+                    console.error('Erreur d’ajout :', request.error);
                     reject(request.error);
                 };
 
@@ -99,6 +99,7 @@ export const addElement = (store: string, payload: object): Promise<number> => {
         open.onerror = () => reject(open.error);
     });
 };
+
 
 
 export const editElement = <T>(store: string, key: string, payload: object) => {

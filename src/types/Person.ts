@@ -4,3 +4,4 @@ export interface Person {
     photo: string;
     category: "Professeur" | "Etudiant" | "Stagiaire";
 }
+

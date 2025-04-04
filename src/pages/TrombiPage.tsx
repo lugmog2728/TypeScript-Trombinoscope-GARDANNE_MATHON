@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import ExportPdf from "./components/form/ExportPdf";
-import { Person } from "./types/Person";
-import { Trombi } from "./types/Trombi";
+import ExportPdf from "../components/form/ExportPdf";
+import { Person } from "../types/Person";
+import { Trombi } from "../types/Trombi";
 import { DndContext, DragEndEvent, MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
-import "./App.css";
-import PersonList from "./components/PersonList";
-import Modal from "./utils/Modal";
-import AddPerson from "./components/form/AddPerson";
-import {addElement, getElement, getMaxId, removeElement} from "./types/Database";
+import "../App.css";
+import PersonList from "../components/PersonList";
+import Modal from "../utils/Modal";
+import AddPerson from "../components/form/AddPerson";
+import {addElement, getElement, getMaxId, removeElement} from "../types/Database";
 
 interface TrombiProps {
     trombi: Trombi;

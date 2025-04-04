@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="✨ it's posible to choose with category export">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="🐛✨fix merge + persiste trombi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TrombiPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrombiPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/Database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Database.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/Trombi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Trombi.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +71,17 @@
       <option name="presentableId" value="Default" />
       <updated>1743623608759</updated>
       <workItem from="1743623609933" duration="12842000" />
-      <workItem from="1743772311002" duration="2627000" />
+      <workItem from="1743772311002" duration="3340000" />
     </task>
+    <task id="LOCAL-00001" summary="🐛✨fix merge + persiste trombi">
+      <option name="closed" value="true" />
+      <created>1743775966379</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743775966379</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,5 +97,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="✨fix merge + persiste trombi" />
+    <option name="LAST_COMMIT_MESSAGE" value="✨fix merge + persiste trombi" />
   </component>
 </project>

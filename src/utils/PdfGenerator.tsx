@@ -53,7 +53,7 @@ const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people, trombiName, roles }
             let x = margin + col * (cardWidth + spacing);
             let y = currentY + row * (cardHeight + 8);
 
-            // Vérifier si on dépasse la page
+            // Vérifier si on dépasse la pages
             if (y + cardHeight > pageHeight - margin) {
                 doc.addPage();
                 currentY = 30;

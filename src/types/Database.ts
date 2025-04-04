@@ -1,4 +1,3 @@
-import {Person} from "./Person";
 export const init = () => {
     const keys = {
         trombi: [
@@ -42,7 +41,6 @@ export const init = () => {
             });
 
             config.forEach((field) => {
-                // ne pas recréer l’index pour la clé primaire (déjà gérée par keyPath)
                 if (field.id !== config[0].id) {
                     store.createIndex(field.id, field.id, { unique: field.unique ?? false });
                 }
@@ -109,12 +107,11 @@ export const addElement = (store: string, payload: object): Promise<number> => {
             if ([...db.objectStoreNames].includes(store)) {
                 const transaction = db.transaction(store, 'readwrite');
                 const objectStore = transaction.objectStore(store);
-                const serialized = JSON.parse(JSON.stringify(payload));
-                const request = objectStore.add(serialized);
+                const request = objectStore.add(payload);
 
                 request.onsuccess = () => {
                     console.log('Ajout réussi avec UUID:', request.result);
-                    resolve(request.result as number); // ✅ Corrigé ici !
+                    resolve(request.result as number);
                 };
 
                 request.onerror = () => {
@@ -159,7 +156,6 @@ export const getElementsByField = <T>(store: string, field: string, value: any):
 
                 request.onerror = () => reject(request.error);
             } else {
-                // fallback : parcourir toutes les entrées (plus lent)
                 const request = objectStore.openCursor();
                 request.onsuccess = () => {
                     const cursor = request.result;

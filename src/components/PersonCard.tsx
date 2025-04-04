@@ -8,7 +8,6 @@ import '../style/card.css';
 interface PersonCardProps {
     person: Person;
     removePerson: (id: number) => void;
-    key?: number;
 }
 
 const PersonCard: React.FC<PersonCardProps> = ({ person, removePerson }) => {
@@ -19,18 +18,21 @@ const PersonCard: React.FC<PersonCardProps> = ({ person, removePerson }) => {
         removePerson(person.id);
     };
 
+    const imageSrc = URL.createObjectURL(person.photo);
+
     return (
-        <div ref={setNodeRef}
-             style={{ transform: CSS.Transform.toString(transform), transition }}
-             className={`card ${person.category.toLowerCase()}`}
-             {...listeners}
-             {...attributes}
+        <div
+            ref={setNodeRef}
+            style={{ transform: CSS.Transform.toString(transform), transition }}
+            className={`card ${person.category.toLowerCase()}`}
+            {...listeners}
+            {...attributes}
         >
-            <img src={person.photo} alt={person.name} />
+            <img src={imageSrc} alt={person.name} />
             <p>{person.name}</p>
             <p>{person.category}</p>
             <button className="delete" onClick={handleDelete} onMouseDown={(e) => e.stopPropagation()}>
-                <Trash2 size={20} color={"red"} />
+                <Trash2 size={20} color="red" />
             </button>
         </div>
     );

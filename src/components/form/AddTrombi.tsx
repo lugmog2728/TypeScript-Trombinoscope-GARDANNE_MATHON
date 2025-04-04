@@ -8,11 +8,11 @@ interface AddTrombiProps {
     onClose: () => void;
 }
 
-export default function AddTrombi({addTrombi, onClose }: AddTrombiProps) {
+export default function AddTrombi({ addTrombi, onClose }: AddTrombiProps) {
     const [name, setName] = useState('');
-    const [photo, setPhoto] = useState('');
+    const [photo, setPhoto] = useState<Blob | null>(null);
 
-    const handleFileSelect = (file: string) => {
+    const handleFileSelect = (file: Blob) => {
         setPhoto(file);
     };
 
@@ -27,35 +27,41 @@ export default function AddTrombi({addTrombi, onClose }: AddTrombiProps) {
         const newTrombi: Trombi = {
             id: Date.now(),
             name,
-            photo: photo || "https://via.placeholder.com/150",
+            photo: photo ?? new Blob(),
             peoples: []
-        }
+        };
 
         addTrombi(newTrombi);
         onClose();
     };
 
-        return (
-            <div className="modal">
-                <div>
-                    <h2>Ajouter un trombinoscope</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="name">Nom</label>
-                            <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Entrez le nom" />
-                        </div>
+    return (
+        <div className="modal">
+            <div>
+                <h2>Ajouter un trombinoscope</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">Nom</label>
+                        <input
+                            id="name"
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Entrez le nom"
+                        />
+                    </div>
 
-                        <div className="form-group">
-                            <label htmlFor="photo">URL de la photo</label>
-                            <DropZone onFileSelect={handleFileSelect} />
-                        </div>
+                    <div className="form-group">
+                        <label htmlFor="photo">URL de la photo</label>
+                        <DropZone onFileSelect={handleFileSelect} />
+                    </div>
 
-                        <div className="form-actions">
-                            <button type="button" onClick={onClose}>Fermer</button>
-                            <button type="submit">Ajouter</button>
-                        </div>
-                    </form>
-                </div>
+                    <div className="form-actions">
+                        <button type="button" onClick={onClose}>Fermer</button>
+                        <button type="submit">Ajouter</button>
+                    </div>
+                </form>
             </div>
+        </div>
     );
 }

@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { FileWithPath, useDropzone } from "react-dropzone";
 
 interface DropZoneProps {
-    onFileSelect: (file: string) => void;
+    onFileSelect: (file: Blob) => void;
 }
 
 const DropZone: React.FC<DropZoneProps> = ({ onFileSelect }) => {
@@ -13,7 +13,7 @@ const DropZone: React.FC<DropZoneProps> = ({ onFileSelect }) => {
             const file = acceptedFiles[0];
             const imageUrl = URL.createObjectURL(file);
             setImageSrc(imageUrl);
-            onFileSelect(imageUrl);
+            onFileSelect(file)
         }
     }, [onFileSelect]);
 
@@ -28,7 +28,7 @@ const DropZone: React.FC<DropZoneProps> = ({ onFileSelect }) => {
                     <p>Glissez et déposez une image ici, ou cliquez pour sélectionner une image</p>
             }
             {imageSrc &&
-                <img src={imageSrc} alt='previsualisation' className="preview" />
+                <img src={imageSrc} alt='prévisualisation' className="preview" />
             }
         </div>
     );

@@ -8,13 +8,13 @@ interface AddPersonProps {
     onClose: () => void;
 }
 
-export default function AddPerson({ addPerson, onClose}: AddPersonProps) {
+export default function AddPerson({ addPerson, onClose }: AddPersonProps) {
     const [name, setName] = useState('');
-    const [photo, setPhoto] = useState('');
+    const [photo, setPhoto] = useState<Blob | string>('');
     const [category, setCategory] = useState('');
 
-    const handleFileSelect = (file: string) => {
-        setPhoto(file); // Met à jour l'état photo avec l'URL de l'image
+    const handleFileSelect = (file: Blob) => {
+        setPhoto(file); // Met à jour l'état photo avec un Blob
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,12 +28,12 @@ export default function AddPerson({ addPerson, onClose}: AddPersonProps) {
         const newPerson: Person = {
             id: Date.now(),
             name,
-            photo: photo || "https://via.placeholder.com/150",
+            photo: photo instanceof Blob ? photo : new Blob(),
             category: category as 'Professeur' | 'Stagiaire' | 'Etudiant',
         };
 
-        addPerson(newPerson); // Ajoute la personne à la liste
-        onClose(); // Ferme le modal après l'ajout
+        addPerson(newPerson);
+        onClose();
     };
 
     return (
@@ -47,7 +47,7 @@ export default function AddPerson({ addPerson, onClose}: AddPersonProps) {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="photo">URL de la photo</label>
+                        <label htmlFor="photo">Photo</label>
                         <DropZone onFileSelect={handleFileSelect} />
                     </div>
 

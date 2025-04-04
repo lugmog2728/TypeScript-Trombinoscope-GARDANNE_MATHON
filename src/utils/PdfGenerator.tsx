@@ -1,15 +1,18 @@
-import React from "react";
-import { jsPDF } from "jspdf";
-import "jspdf-autotable";
-import { Person } from "../types/Person"; // Import du type
+import {Person} from "../types/Person";
+import jsPDF from "jspdf";
 
-const loadImage = (url: string): Promise<HTMLImageElement> => {
+const loadImage = (url: string | Blob): Promise<HTMLImageElement> => {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.crossOrigin = "Anonymous";
         img.onload = () => resolve(img);
         img.onerror = (e) => reject(e);
-        img.src = url;
+
+        if (url instanceof Blob) {
+            url = URL.createObjectURL(url);
+        }
+
+        img.src = url as string;
     });
 };
 
@@ -66,7 +69,7 @@ const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people, trombiName, roles }
 
             // Image
             try {
-                const img = await loadImage(person.photo);
+                const img = await loadImage(person.photo);  // Passe le photo (Blob ou URL) à loadImage
                 doc.addImage(img, "JPEG", x + 10, y + 5, 20, 20);
             } catch {
                 doc.setFillColor(200, 200, 200);

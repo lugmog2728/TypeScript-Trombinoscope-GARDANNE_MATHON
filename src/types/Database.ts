@@ -1,24 +1,56 @@
 import {Person} from "./Person";
-export const init = ()=> {
-    let db!: IDBDatabase;
-
+export const init = () => {
     const keys = {
-        trombi: [{id: 'uuid', unique: true,autoIncrement: true},{id: 'name'},{id: 'photo'}],
-        person: [{id: 'uuid', unique: true,autoIncrement: true},{id: 'trombiID'},{id: 'name'},{id: 'photo'},{id: 'category'}],
+        trombi: [
+            { id: 'uuid', autoIncrement: true, unique: true },
+            { id: 'name', unique: false },
+            { id: 'photo', unique: false },
+        ],
+        person: [
+            { id: 'uuid', autoIncrement: true, unique: true },
+            { id: 'trombiID', unique: false },
+            { id: 'name', unique: false },
+            { id: 'photo', unique: false },
+            { id: 'category', unique: false },
+        ],
     };
+
     const request = indexedDB.open('data', 3);
-    request.onerror = (err) => console.error(`IndexedDB error: ${request.error}`, err);
-    request.onsuccess = () => (db = request.result);
+
+    request.onerror = (event) => {
+        console.error(`IndexedDB error: ${request.error}`, event);
+    };
+
+    request.onsuccess = () => {
+        const db = request.result;
+        console.log('Base ouverte avec succès');
+    };
+
     request.onupgradeneeded = () => {
         console.log('Création de la base');
         const db = request.result;
-        const postsStore = db.createObjectStore('trombisStore', {keyPath: keys.trombi[0].id});
-        const projectsStore = db.createObjectStore('peoplesStore', {keyPath: keys.person[0].id});
-        keys.trombi.forEach((key) => postsStore.createIndex(key.id, key.id, {unique: key.unique}));
-        keys.person.forEach((key) => projectsStore.createIndex(key.id, key.id, {unique: key.unique}));
-    };
 
-}
+        const stores = [
+            { name: 'trombisStore', config: keys.trombi },
+            { name: 'peoplesStore', config: keys.person },
+        ];
+
+        stores.forEach(({ name, config }) => {
+            const store = db.createObjectStore(name, {
+                keyPath: config[0].id,
+                autoIncrement: config[0].autoIncrement,
+            });
+
+            config.forEach((field) => {
+                // ne pas recréer l’index pour la clé primaire (déjà gérée par keyPath)
+                if (field.id !== config[0].id) {
+                    store.createIndex(field.id, field.id, { unique: field.unique ?? false });
+                }
+            });
+        });
+    };
+};
+
 
 export const getElement = <T>(store: string, key: string) => {
     const open = indexedDB.open('data');
@@ -100,6 +132,53 @@ export const addElement = (store: string, payload: object): Promise<number> => {
     });
 };
 
+export const getElementsByField = <T>(store: string, field: string, value: any): Promise<T[]> => {
+    const open = indexedDB.open('data');
+    return new Promise<T[]>((resolve, reject) => {
+        open.onerror = () => reject(open.error);
+
+        open.onsuccess = () => {
+            const db = open.result;
+            if (![...db.objectStoreNames].includes(store)) {
+                return reject(new Error(`Le store "${store}" n'existe pas.`));
+            }
+
+            const transaction = db.transaction(store, 'readonly');
+            const objectStore = transaction.objectStore(store);
+
+            let results: T[] = [];
+
+            if (objectStore.indexNames.contains(field)) {
+                const index = objectStore.index(field);
+                const request = index.getAll(IDBKeyRange.only(value));
+
+                request.onsuccess = () => {
+                    results = request.result;
+                    resolve(results);
+                };
+
+                request.onerror = () => reject(request.error);
+            } else {
+                // fallback : parcourir toutes les entrées (plus lent)
+                const request = objectStore.openCursor();
+                request.onsuccess = () => {
+                    const cursor = request.result;
+                    if (cursor) {
+                        if (cursor.value[field] === value) {
+                            results.push(cursor.value);
+                        }
+                        cursor.continue();
+                    } else {
+                        resolve(results);
+                    }
+                };
+                request.onerror = () => reject(request.error);
+            }
+
+            transaction.oncomplete = () => db.close();
+        };
+    });
+};
 
 
 export const editElement = <T>(store: string, key: string, payload: object) => {

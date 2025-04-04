@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import ExportPdf from "../components/form/ExportPdf";
-import { Person } from "../types/Person";
+import {getAllPersonByTrombi, Person} from "../types/Person";
 import { Trombi } from "../types/Trombi";
 import { DndContext, DragEndEvent, MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import "../App.css";
@@ -16,7 +16,7 @@ interface TrombiProps {
 }
 
 const TrombiPage: React.FC<TrombiProps> = ({ trombi }) => {
-    const [personList, setPersonList] = useState<Person[]>(trombi.peoples);
+    const [personList, setPersonList] = useState<Person[]>([]);
     const [showModalNewPerson, setShowModalNewPerson] = useState(false);
     const [showModalExport, setShowModalExport] = useState(false);
     const navigate = useNavigate();
@@ -27,53 +27,30 @@ const TrombiPage: React.FC<TrombiProps> = ({ trombi }) => {
     );
 
     useEffect(() => {
-        let elements: Person[] = [];
-        getElement("peoplesStore", "all").then((value: any) => {
-            value.forEach((element: any) => {
-                if (element.trombiID == trombi.id) { // 👈 Utiliser trombi.id directement
-                    elements.push({
-                        id: element.uuid,
-                        name: element.name,
-                        photo: element.photo,
-                        category: element.category,
-                    });
-                }
-            });
-            setPersonList(elements);
-        });
-    }, [trombi.id]);
-
-
+        getAllPersonByTrombi(trombi.id, setPersonList);
+    }, []);
 
     const addPerson = (newPerson: Person) => {
-        let id_person : number;
-        id_person=0
-        getMaxId('peoplesStore').then((maxId)=>{
-            id_person=maxId +1
-            addElement('peoplesStore', {
-                id: id_person,
-                trombiID: trombi.id,
-                name: newPerson.name,
-                photo: newPerson.photo,
-                category: newPerson.category,
-            }).then(
-                ()=>{
-                    let elements: Person[] = [];
-                    getElement('peoplesStore','all').then((e)=>{
-                        console.log(e)
-                        }
-                    )
-                    setPersonList(elements);
-                })
-        });
+        addElement('peoplesStore', {
+            trombiId: trombi.id,
+            name: newPerson.name,
+            photo: newPerson.photo,
+            category: newPerson.category,
+        })
+            .then(() => {
+                getAllPersonByTrombi(trombi.id, setPersonList);
+            })
+            .catch((error) => console.error('Error adding person:', error));
     };
 
-    const removePerson = (id_i: number) => {
-        removeElement('peoplesStore',id_i)
-        const index = personList.findIndex(person => person.id === id_i);
 
-        if (index > -1) {
-            setPersonList(personList.splice(index, 1)); // Supprime l'élément
+
+    const removePerson = (id_i: number) => {
+        try{
+            removeElement('peoplesStore', id_i);
+            setPersonList(prevList => prevList.filter(person => person.id !== id_i));
+        } catch (error) {
+            console.error("Erreur lors de la suppression de la person :", error);
         }
     };
 

@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="🐛✨fix merge + persiste trombi">
+    <list default="true" id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="♻️ refactor structur of project page + router">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/Trombi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Trombi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/AddPerson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/AddPerson.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TrombiPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TrombiPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/Database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Database.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/Person.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Person.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\lugmog\projet-dev\TypeScript-Trombinoscope-GARDANNE_MATHON\src\pages" />
+      <recent name="\\wsl.localhost\Ubuntu\home\lugmog\projet-dev\TypeScript-Trombinoscope-GARDANNE_MATHON\src\utils" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -71,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743623608759</updated>
       <workItem from="1743623609933" duration="12842000" />
-      <workItem from="1743772311002" duration="3340000" />
+      <workItem from="1743772311002" duration="11261000" />
     </task>
     <task id="LOCAL-00001" summary="🐛✨fix merge + persiste trombi">
       <option name="closed" value="true" />
@@ -81,7 +88,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743775966379</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="♻️ refactor structur of project page + router">
+      <option name="closed" value="true" />
+      <created>1743776847057</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743776847057</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="✨fix merge + persiste trombi" />
-    <option name="LAST_COMMIT_MESSAGE" value="✨fix merge + persiste trombi" />
+    <MESSAGE value="♻️ refactor structur of project page + router" />
+    <option name="LAST_COMMIT_MESSAGE" value="♻️ refactor structur of project page + router" />
   </component>
 </project>

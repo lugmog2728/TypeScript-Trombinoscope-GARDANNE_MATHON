@@ -8,7 +8,7 @@ interface AddPersonProps {
     onClose: () => void;
 }
 
-export default function AddPerson({ addPerson, onClose }: AddPersonProps) {
+export default function AddPerson({ addPerson, onClose}: AddPersonProps) {
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
     const [category, setCategory] = useState('');

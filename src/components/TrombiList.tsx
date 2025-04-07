@@ -5,9 +5,8 @@ import { Trombi } from "../types/Trombi";
 import '../style/list.css';
 
 interface TrombiListProps {
-    trombis: Trombi[]; // an array of Trombi
+    trombis: Trombi[];
     removeTrombi: (id: number) => void;
-
 }
 
 const TrombiList: React.FC<TrombiListProps> = ({ trombis, removeTrombi }) => {
@@ -15,6 +14,7 @@ const TrombiList: React.FC<TrombiListProps> = ({ trombis, removeTrombi }) => {
         <div className="list">
             {trombis.map((trombi) => (
                 <TrombiCard
+                    key={trombi.id}
                     trombi={trombi}
                     removeTrombi={removeTrombi}
                 />

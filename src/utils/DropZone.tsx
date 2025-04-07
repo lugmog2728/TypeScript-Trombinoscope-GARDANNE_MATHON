@@ -13,7 +13,7 @@ const DropZone: React.FC<DropZoneProps> = ({ onFileSelect }) => {
             const file = acceptedFiles[0];
             const imageUrl = URL.createObjectURL(file);
             setImageSrc(imageUrl);
-            onFileSelect(file)
+            onFileSelect(file);
         }
     }, [onFileSelect]);
 

@@ -9,7 +9,7 @@ interface AddTrombiProps {
 }
 
 export default function AddTrombi({ addTrombi, onClose }: AddTrombiProps) {
-    const [name, setName] = useState('');
+    const [name, setName] = useState<string>('');
     const [photo, setPhoto] = useState<Blob | null>(null);
 
     const handleFileSelect = (file: Blob) => {
@@ -20,7 +20,7 @@ export default function AddTrombi({ addTrombi, onClose }: AddTrombiProps) {
         e.preventDefault();
 
         if (!name.trim()) {
-            alert('Veuillez remplir les champs obligatoires.');
+            alert('Veuillez remplir le nom.');
             return;
         }
 
@@ -48,11 +48,12 @@ export default function AddTrombi({ addTrombi, onClose }: AddTrombiProps) {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Entrez le nom"
+                            required
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="photo">URL de la photo</label>
+                        <label htmlFor="photo">Photo</label>
                         <DropZone onFileSelect={handleFileSelect} />
                     </div>
 

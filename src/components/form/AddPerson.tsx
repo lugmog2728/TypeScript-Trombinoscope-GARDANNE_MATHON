@@ -3,33 +3,35 @@ import '../../style/form.css';
 import { Person } from "../../types/Person";
 import DropZone from '../../utils/DropZone';
 
+type Category = 'Professeur' | 'Stagiaire' | 'Etudiant';
+
 interface AddPersonProps {
     addPerson: (person: Person) => void;
     onClose: () => void;
 }
 
 export default function AddPerson({ addPerson, onClose }: AddPersonProps) {
-    const [name, setName] = useState('');
-    const [photo, setPhoto] = useState<Blob | string>('');
-    const [category, setCategory] = useState('');
+    const [name, setName] = useState<string>('');
+    const [photo, setPhoto] = useState<Blob | null>(null);
+    const [category, setCategory] = useState<Category | ''>('');
 
     const handleFileSelect = (file: Blob) => {
-        setPhoto(file); // Met à jour l'état photo avec un Blob
+        setPhoto(file);
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!name.trim() || !category) {
-            alert("Veuillez remplir les champs obligatoires.");
+        if (!name.trim() || !category || !photo) {
+            alert("Veuillez remplir tous les champs obligatoires.");
             return;
         }
 
         const newPerson: Person = {
             id: Date.now(),
             name,
-            photo: photo instanceof Blob ? photo : new Blob(),
-            category: category as 'Professeur' | 'Stagiaire' | 'Etudiant',
+            photo,
+            category,
         };
 
         addPerson(newPerson);
@@ -43,7 +45,14 @@ export default function AddPerson({ addPerson, onClose }: AddPersonProps) {
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Nom</label>
-                        <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Entrez le nom" />
+                        <input
+                            id="name"
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Entrez le nom"
+                            required
+                        />
                     </div>
 
                     <div className="form-group">
@@ -53,7 +62,12 @@ export default function AddPerson({ addPerson, onClose }: AddPersonProps) {
 
                     <div className="form-group">
                         <label htmlFor="category">Catégorie</label>
-                        <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+                        <select
+                            id="category"
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value as Category)}
+                            required
+                        >
                             <option value="">Sélectionnez une catégorie</option>
                             <option value="Professeur">Professeur</option>
                             <option value="Stagiaire">Stagiaire</option>

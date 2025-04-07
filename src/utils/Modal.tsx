@@ -9,8 +9,8 @@ interface ModalProps {
 
 export default function Modal({ onClose, children }: ModalProps) {
     return createPortal(
-        <div className="modal-overlay">
-            <div className="modal-content">
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 {children}
             </div>
         </div>,

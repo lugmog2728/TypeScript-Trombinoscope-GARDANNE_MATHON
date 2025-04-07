@@ -1,4 +1,4 @@
-import {Person} from "../types/Person";
+import { Person } from "../types/Person";
 import jsPDF from "jspdf";
 
 const loadImage = (url: string | Blob): Promise<HTMLImageElement> => {
@@ -56,7 +56,7 @@ const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people, trombiName, roles }
             let x = margin + col * (cardWidth + spacing);
             let y = currentY + row * (cardHeight + 8);
 
-            // Vérifier si on dépasse la pages
+            // Vérifier si on dépasse la page
             if (y + cardHeight > pageHeight - margin) {
                 doc.addPage();
                 currentY = 30;
@@ -69,7 +69,7 @@ const PdfGenerator: React.FC<PdfGeneratorProps> = ({ people, trombiName, roles }
 
             // Image
             try {
-                const img = await loadImage(person.photo);  // Passe le photo (Blob ou URL) à loadImage
+                const img = await loadImage(person.photo);  // Passe la photo (Blob ou URL) à loadImage
                 doc.addImage(img, "JPEG", x + 10, y + 5, 20, 20);
             } catch {
                 doc.setFillColor(200, 200, 200);

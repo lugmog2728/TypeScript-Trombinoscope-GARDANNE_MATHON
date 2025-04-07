@@ -1,5 +1,5 @@
-import {Person} from "./Person";
-import {getElement} from "./Database";
+import { Person } from "./Person";
+import { getElement } from "./Database";
 import React from "react";
 
 export interface Trombi {
@@ -33,4 +33,3 @@ export function getAllTrombi(setTrombiList: React.Dispatch<React.SetStateAction<
             console.error("Erreur lors de la récupération des trombis :", error);
         });
 }
-

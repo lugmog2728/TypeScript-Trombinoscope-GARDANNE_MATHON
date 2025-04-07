@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="✨peoples are percist">
+    <list default="true" id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="🚨fix EsLint warning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PersonCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PersonCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PersonList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PersonList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TrombiCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TrombiCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TrombiList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TrombiList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/AddPerson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/AddPerson.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/AddTrombi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/AddTrombi.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/ExportPdf.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/ExportPdf.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TrombiPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TrombiPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/Person.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Person.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/Trombi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Trombi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/DropZone.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DropZone.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/PdfGenerator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PdfGenerator.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +88,7 @@
       <updated>1743623608759</updated>
       <workItem from="1743623609933" duration="12842000" />
       <workItem from="1743772311002" duration="18098000" />
-      <workItem from="1744026478142" duration="1718000" />
+      <workItem from="1744026478142" duration="4161000" />
     </task>
     <task id="LOCAL-00001" summary="🐛✨fix merge + persiste trombi">
       <option name="closed" value="true" />
@@ -106,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743795450387</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="🚨fix EsLint warning">
+      <option name="closed" value="true" />
+      <created>1744028753230</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744028753230</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +143,7 @@
     <MESSAGE value="✨fix merge + persiste trombi" />
     <MESSAGE value="♻️ refactor structur of project page + router" />
     <MESSAGE value="✨peoples are percist" />
-    <option name="LAST_COMMIT_MESSAGE" value="✨peoples are percist" />
+    <MESSAGE value="fix EsLint warning" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix EsLint warning" />
   </component>
 </project>

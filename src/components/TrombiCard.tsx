@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Trombi } from "../types/Trombi";
 import '../style/card.css';
-import {Trash2} from "lucide-react";
+import { Trash2 } from "lucide-react";
 
 interface TrombiCardProps {
     trombi: Trombi;
@@ -16,17 +16,17 @@ const TrombiCard: React.FC<TrombiCardProps> = ({ trombi, removeTrombi }) => {
         navigate(`/trombi/${trombi.id}`);
     };
 
-    const handleDelete = ( event: React.MouseEvent) =>{
+    const handleDelete = (event: React.MouseEvent) => {
         event.stopPropagation();
         removeTrombi(trombi.id);
     };
 
     return (
         <div className="card" onClick={handleClick} style={{ cursor: "pointer" }}>
-            <img src={URL.createObjectURL(trombi.photo)} alt={`${trombi.name}`} />
+            <img src={URL.createObjectURL(trombi.photo)} alt={trombi.name} />
             <p>{trombi.name}</p>
             <button className="delete" onClick={handleDelete} onMouseDown={(e) => e.stopPropagation()}>
-                <Trash2 size={20} color={"red"} />
+                <Trash2 size={20} color="red" />
             </button>
         </div>
     );

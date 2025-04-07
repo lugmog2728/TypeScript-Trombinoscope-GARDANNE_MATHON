@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="605bee96-7321-4e23-af69-e85d304aa941" name="Changes" comment="✨peoples are percist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PersonCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PersonCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TrombiCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TrombiCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/AddPerson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/AddPerson.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/AddTrombi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/AddTrombi.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/Database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Database.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TrombiPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TrombiPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/Person.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Person.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/Trombi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Trombi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/DropZone.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DropZone.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +43,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/lugmog/projet-dev/TypeScript-Trombinoscope-GARDANNE_MATHON&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;\\\\wsl.localhost\\Ubuntu\\home\\lugmog\\projet-dev\\TypeScript-Trombinoscope-GARDANNE_MATHON\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/lugmog/projet-dev/TypeScript-Trombinoscope-GARDANNE_MATHON",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "\\\\wsl.localhost\\Ubuntu\\home\\lugmog\\projet-dev\\TypeScript-Trombinoscope-GARDANNE_MATHON\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu\home\lugmog\projet-dev\TypeScript-Trombinoscope-GARDANNE_MATHON\src\pages" />
@@ -83,6 +80,7 @@
       <updated>1743623608759</updated>
       <workItem from="1743623609933" duration="12842000" />
       <workItem from="1743772311002" duration="18098000" />
+      <workItem from="1744026478142" duration="1718000" />
     </task>
     <task id="LOCAL-00001" summary="🐛✨fix merge + persiste trombi">
       <option name="closed" value="true" />

@@ -4,7 +4,7 @@ import TrombiList from "../components/TrombiList";
 import Modal from "../utils/Modal";
 import '../App.css';
 import AddTrombi from "../components/form/AddTrombi";
-import { addElement, getElement, removeElement } from "../types/Database";
+import { addElement, removeElement } from "../types/Database";
 
 const Home: React.FC = () => {
     const [showModal, setShowModal] = useState(false);

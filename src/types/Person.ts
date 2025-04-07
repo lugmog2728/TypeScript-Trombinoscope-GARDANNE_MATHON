@@ -1,4 +1,4 @@
-import { getElement, getElementsByField } from "./Database";
+import { getElementsByField } from "./Database";
 import React from "react";
 
 export interface Person {

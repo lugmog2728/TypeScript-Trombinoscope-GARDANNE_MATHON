@@ -9,7 +9,7 @@ import "../App.css";
 import PersonList from "../components/PersonList";
 import Modal from "../utils/Modal";
 import AddPerson from "../components/form/AddPerson";
-import {addElement, getElement, getMaxId, removeElement} from "../types/Database";
+import {addElement, removeElement} from "../types/Database";
 
 interface TrombiProps {
     trombi: Trombi;

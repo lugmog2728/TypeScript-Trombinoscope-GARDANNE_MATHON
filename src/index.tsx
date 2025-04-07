@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './pages/TrombiPage';
 import reportWebVitals from './reportWebVitals';
-import {Trombi} from "./types/Trombi";
-import { Person} from "./types/Person"
 import Index from "./utils/Router";
-import {addElement, init} from "./types/Database"
+import {init} from "./types/Database"
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

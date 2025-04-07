@@ -23,7 +23,7 @@ const TrombiCard: React.FC<TrombiCardProps> = ({ trombi, removeTrombi }) => {
 
     return (
         <div className="card" onClick={handleClick} style={{ cursor: "pointer" }}>
-            <img src={URL.createObjectURL(trombi.photo)} alt="photo" />
+            <img src={URL.createObjectURL(trombi.photo)} alt={`${trombi.name}`} />
             <p>{trombi.name}</p>
             <button className="delete" onClick={handleDelete} onMouseDown={(e) => e.stopPropagation()}>
                 <Trash2 size={20} color={"red"} />

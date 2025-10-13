@@ -60,7 +60,7 @@ export const getElement = <T>(store: string, key: string) => {
                 const objectStore = transaction.objectStore(store);
                 if (key === 'all') request = objectStore.getAll();
                 else request = objectStore.get(key);
-                request.onerror = () => reject(request.error);
+                request.onerror = () => reject(new Error(request.error?.message || 'Failed to get element from database'));
                 request.onsuccess = () => resolve(request.result);
                 transaction.oncomplete = () => db.close();
             } else {
@@ -80,7 +80,7 @@ export const getMaxId = (store: string): Promise<number> => {
                 const transaction = db.transaction(store, 'readwrite');
                 const objectStore = transaction.objectStore(store);
                 request = objectStore.getAll();
-                request.onerror = () => reject(request.error);
+                request.onerror = () => reject(new Error(request.error?.message || 'Failed to get max id from database'));
                 request.onsuccess = () => {
                     let max = 0
                     request.result.forEach((element: any) => {
@@ -114,8 +114,8 @@ export const addElement = (store: string, payload: object): Promise<number> => {
                 };
 
                 request.onerror = () => {
-                    console.error('Erreur d’ajout :', request.error);
-                    reject(request.error);
+                    console.error('Erreur d'ajout :', request.error);
+                    reject(new Error(request.error?.message || 'Failed to add element to database'));
                 };
 
                 transaction.oncomplete = () => db.close();
@@ -124,14 +124,14 @@ export const addElement = (store: string, payload: object): Promise<number> => {
             }
         };
 
-        open.onerror = () => reject(open.error);
+        open.onerror = () => reject(new Error(open.error?.message || 'Failed to open database'));
     });
 };
 
 export const getElementsByField = <T>(store: string, field: string, value: any): Promise<T[]> => {
     const open = indexedDB.open('data');
     return new Promise<T[]>((resolve, reject) => {
-        open.onerror = () => reject(open.error);
+        open.onerror = () => reject(new Error(open.error?.message || 'Failed to open database'));
 
         open.onsuccess = () => {
             const db = open.result;
@@ -153,7 +153,7 @@ export const getElementsByField = <T>(store: string, field: string, value: any):
                     resolve(results);
                 };
 
-                request.onerror = () => reject(request.error);
+                request.onerror = () => reject(new Error(request.error?.message || 'Failed to get elements by field'));
             } else {
                 const request = objectStore.openCursor();
                 request.onsuccess = () => {
@@ -167,7 +167,7 @@ export const getElementsByField = <T>(store: string, field: string, value: any):
                         resolve(results);
                     }
                 };
-                request.onerror = () => reject(request.error);
+                request.onerror = () => reject(new Error(request.error?.message || 'Failed to iterate cursor'));
             }
 
             transaction.oncomplete = () => db.close();
@@ -187,7 +187,7 @@ export const editElement = <T>(store: string, key: string, payload: object) => {
                 const objectStore = transaction.objectStore(store);
                 if (key === 'all') request = objectStore.getAll();
                 else request = objectStore.get(key);
-                request.onerror = () => reject(request.error);
+                request.onerror = () => reject(new Error(request.error?.message || 'Failed to edit element in database'));
                 request.onsuccess = () => {
                     const serialized = JSON.parse(JSON.stringify(payload));
                     const updateRequest = objectStore.put(serialized);

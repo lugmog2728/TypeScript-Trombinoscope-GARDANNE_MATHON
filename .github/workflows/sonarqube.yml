@@ -9,7 +9,7 @@ jobs:
     sonarcloud: 
       runs-on: ubuntu-latest
       permissions: 
-        content: read 
+        contents: read 
         pull-requests: write
       
       steps: 

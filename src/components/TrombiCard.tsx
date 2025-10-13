@@ -21,8 +21,23 @@ const TrombiCard: React.FC<TrombiCardProps> = ({ trombi, removeTrombi }) => {
         removeTrombi(trombi.id);
     };
 
+    const handleKeyDown = (event: React.KeyboardEvent) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handleClick();
+        }
+    };
+
     return (
-        <div className="card" onClick={handleClick} style={{ cursor: "pointer" }}>
+        <div
+            className="card"
+            onClick={handleClick}
+            onKeyDown={handleKeyDown}
+            role="button"
+            tabIndex={0}
+            style={{ cursor: "pointer" }}
+            aria-label={`Voir les détails de ${trombi.name}`}
+        >
             <img src={URL.createObjectURL(trombi.photo)} alt={trombi.name} />
             <p>{trombi.name}</p>
             <button className="delete" onClick={handleDelete} onMouseDown={(e) => e.stopPropagation()}>

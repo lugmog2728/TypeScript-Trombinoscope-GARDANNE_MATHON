@@ -21,7 +21,6 @@ export const init = () => {
     };
 
     request.onsuccess = () => {
-        const db = request.result;
         console.log('Base ouverte avec succès');
     };
 

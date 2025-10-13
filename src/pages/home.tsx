@@ -28,7 +28,7 @@ const Home: React.FC = () => {
     // 🔹 Supprimer un trombi
     const removeTrombi = async (id: number) => {
         try {
-            await removeElement('trombisStore', id);
+            removeElement('trombisStore', id);
             setTrombiList(prevList => prevList.filter(trombi => trombi.id !== id));
         } catch (error) {
             console.error("Erreur lors de la suppression du trombi :", error);

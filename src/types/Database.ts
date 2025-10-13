@@ -114,7 +114,7 @@ export const addElement = (store: string, payload: object): Promise<number> => {
                 };
 
                 request.onerror = () => {
-                    console.error('Erreur d'ajout :', request.error);
+                    console.error('Erreur d\'ajout :', request.error);
                     reject(new Error(request.error?.message || 'Failed to add element to database'));
                 };
 

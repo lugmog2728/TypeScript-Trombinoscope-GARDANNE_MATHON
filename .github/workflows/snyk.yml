@@ -1,0 +1,23 @@
+name: Analyse Snyk 
+
+
+on: [push, pull_request]
+
+jobs:
+  sca: 
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with: 
+        node-version: '18'
+
+      - name: Installer Snyk CLI 
+        run: npm install -g snyk 
+
+      - name: Executer l'analyse Snyk 
+        run: snyk test --filte=requirements.txt --packge-manager=pip 
+        env: 
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
